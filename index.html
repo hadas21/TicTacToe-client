@@ -16,12 +16,14 @@
 <body>
 
     <h1>TicTacToe</h1>
-    <div class="container border">
+    <p id="welcome-user"></p>
+
+    <div class="container">
         <form id="sign-up-form">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input name="credentials[email]" placeholder="an@example.email" type="email" class="form-control" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div id="emailHelp" class="form-text">We'll never send you any newsletters.</div>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -31,8 +33,10 @@
                 <label for="exampleInputPassword1" class="form-label">Password Confirmation</label>
                 <input name="credentials[password_confirmation]" type="password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
+        <button id="sign-up-btn" class="btn btn-primary btn-lg">Sign Up</button>
     </div>
 </body>
 

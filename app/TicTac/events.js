@@ -2,6 +2,10 @@ const getFormFields = require('./../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
+const onSignUpBtn = function() {
+    $('#sign-up-form').show()
+}
+
 const onSignUp = function(event) {
     event.preventDefault()
 
@@ -10,9 +14,10 @@ const onSignUp = function(event) {
 
     api.signUp(data)
         .then(ui.onSignUpSuccess)
-        .catch(ui.failure)
+        .catch(ui.onSignUpFailure)
 }
 
 module.exports = {
-    onSignUp
+    onSignUp,
+    onSignUpBtn
 }
