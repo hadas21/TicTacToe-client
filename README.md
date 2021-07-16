@@ -1,21 +1,18 @@
 ### User Story
 
-User creates a new account  to sign up as a player
+As a user I want to sign up/in/out as a player
 
-User signs into an existing account  to start a new game
+As a user I want to  to start a new game
 
-User signs out of an existing account to leave the game
+As a user I want to start as x and rotate between x and o  to play the game against myself
 
-User starts as x and rotates between x and o  to play the game 
-against himself
+As a user I want to select only empty spaces on the board to avoid overriding previous moves
 
-User selects can select only empty spaces on the board to avoid overriding previous moves
+As a user I want to get notified of the game result at the end of the game
 
-User gets notified of the game result at the end of the game
+As a user I don't want to make any moves after the end of the game
 
-User cannot make any moves after the end of the game
-
-User start a new game at any point in time
+As a user I want to start a new game at any point in time
 
 
 ---
