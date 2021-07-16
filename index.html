@@ -18,6 +18,10 @@
     <h1>TicTacToe</h1>
     <p id="welcome-user"></p>
 
+    <button id="sign-up-btn" class="btn btn-primary btn-lg">Sign Up</button>
+    <button id="log-in-btn" class="btn btn-primary btn-lg">Log In</button>
+    <button id="log-out-btn" class="btn btn-primary btn-lg">Log Out</button>
+
     <div class="container">
         <form id="sign-up-form">
             <div class="mb-3">
@@ -33,10 +37,28 @@
                 <label for="exampleInputPassword1" class="form-label">Password Confirmation</label>
                 <input name="credentials[password_confirmation]" type="password" class="form-control">
             </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
-        <button id="sign-up-btn" class="btn btn-primary btn-lg">Sign Up</button>
+
+    </div>
+
+    <div class="container">
+        <form id="log-in-form">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input name="credentials[email]" placeholder="an@example.email" type="email" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input name="credentials[password]" type="password" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
     </div>
 </body>
 

@@ -1,18 +1,35 @@
 'use strict'
 
 const onSignUpSuccess = (response) => {
-    console.log(`Hey, ${response.user.email}. welcome!`)
+    console.log(`Hey, ${response.user.email}, welcome!`)
     $('#welcome-user').text(`Hey, ${response.user.email}. welcome!`)
-    $('#sign-up-form').trigger('reset')
     $('#sign-up-form').hide()
 }
 
 const onSignUpFailure = function() {
-    alert('Your user name already exists, try logging in')
-    $('#sign-up-form').hide()
+
+    $('#sign-up-form').trigger('reset')
+    alert('something went wrong =( try again')
+    $('#sign-up-btn').show()
+}
+
+const onLogInSuccess = (response) => {
+    $('#welcome-user').text(`Hey, ${response.user.email}! good to have you back`)
+    console.log(response)
+    $('#log-in-form').hide()
+    $('#log-in-btn').hide()
+    $('#log-out-btn').show()
+}
+
+const onLogInFailure = function() {
+    alert("Sorry, the input does'nt match with our system")
+    $('#log-in-form').trigger('reset')
+    $('#log-in-btn').show()
 }
 
 module.exports = {
     onSignUpSuccess,
-    onSignUpFailure
+    onSignUpFailure,
+    onLogInSuccess,
+    onLogInFailure
 }
