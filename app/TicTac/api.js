@@ -16,15 +16,18 @@ const logIn = function(data) {
     })
 }
 
-// const logOut = function() {
-//     return $.ajax({
-//         method: 'DELETE',
-//         url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-out',
-//         data
-//     })
-// }
+const logOut = function() {
+    return $.ajax({
+        method: 'DELETE',
+        url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-out',
+        headers: {
+            Authorization: 'Bearer ' + store.userToken
+        }
+    })
+}
 
 module.exports = {
     signUp,
-    logIn
+    logIn,
+    logOut
 }

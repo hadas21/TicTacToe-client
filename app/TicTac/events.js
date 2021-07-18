@@ -37,7 +37,9 @@ const onLogIn = function(event) {
 
 const onLogOut = function() {
     console.log('out')
-        // api.logOut()
+    api.logOut()
+        .then(ui.onLogOutSuccess)
+        .catch(ui.onLogOutFailure)
 
 }
 
