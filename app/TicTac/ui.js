@@ -1,11 +1,14 @@
 'use strict'
 
+const { x } = require('../store')
 const store = require('../store')
 
 const onSignUpSuccess = (response) => {
-    console.log(`Hey, ${response.user.email}, welcome!`)
-    $('#welcome-user').text(`Hey, ${response.user.email}. welcome!`)
+    alert(`Hey, ${response.user.email}, welcome! please log in`)
+    $('#welcome-user').text(`Hey, ${response.user.email}. thanks for signing up =)`)
     $('#sign-up-form').hide()
+
+
 }
 
 const onSignUpFailure = function() {
@@ -19,9 +22,11 @@ const onLogInSuccess = (response) => {
     $('#welcome-user').text(`Hey, ${response.user.email}! good to have you back`)
     console.log(response)
     store.userToken = response.user.token
-    $('#log-in-form').hide()
+    $('#log-in-form').hide().trigger('reset')
     $('#log-in-btn').hide()
     $('#log-out-btn').show()
+    $('#new-game-btn').show()
+    $('#sign-up-btn').hide()
 }
 
 const onLogInFailure = function() {
@@ -34,11 +39,24 @@ const onLogOutSuccess = () => {
     $('#welcome-user').text(`Bye now`)
     $('#log-out-btn').hide()
     $('#log-in-btn').show()
+    $('#new-game-btn').hide()
 }
 
-const onLogOutFailure = () => {
+const failure = () => {
     alert('Something went wrong... try again')
 }
+
+const onNewGameSuccess = (response) => {
+    store.gameId = response.game.id
+    store.gameCells = response.game.cells
+
+    $('#board-game').show()
+    store.playerStat = x
+    console.log(store.playerStat)
+}
+
+
+
 
 module.exports = {
     onSignUpSuccess,
@@ -46,5 +64,7 @@ module.exports = {
     onLogInSuccess,
     onLogInFailure,
     onLogOutSuccess,
-    onLogOutFailure
+    onNewGameSuccess,
+    failure
+
 }

@@ -39,14 +39,28 @@ const onLogOut = function() {
     console.log('out')
     api.logOut()
         .then(ui.onLogOutSuccess)
-        .catch(ui.onLogOutFailure)
+        .catch(ui.failure)
 
 }
 
+const onNewGame = function() {
+    api.newGame()
+        .then(ui.onNewGameSuccess)
+        .catch(ui.failure)
+
+
+}
+
+const onCell = function() {
+    console.log('x')
+
+}
 module.exports = {
     onSignUpBtn,
     onSignUp,
     onLogInBtn,
     onLogIn,
-    onLogOut
+    onLogOut,
+    onNewGame,
+    onCell
 }

@@ -13,5 +13,9 @@ $(() => {
     $('#log-in-form').on('submit', eventsTic.onLogIn)
     $('#log-in-btn').on('click', eventsTic.onLogInBtn)
 
+    $('#board-game').hide()
     $('#log-out-btn').hide().on('click', eventsTic.onLogOut)
+    $('#new-game-btn').hide().on('click', eventsTic.onNewGame)
+
+    $('.cell').on('click', eventsTic.onCell)
 })
