@@ -69,8 +69,8 @@ const onCell = function(event) {
         api.cell(store.cellIndex, store.playerStat)
 
         .then(ui.onCellSuccess(event))
-            .catch(ui.onCellFailure)
-        console.log('empty')
+            .catch(ui.failure)
+
     } else {
         console.log('this space is taken')
     }
