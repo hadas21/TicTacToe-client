@@ -1,6 +1,5 @@
 'use strict'
 
-const { x } = require('../store')
 const store = require('../store')
 
 const onSignUpSuccess = (response) => {
@@ -49,16 +48,19 @@ const onNewGameSuccess = (response) => {
     store.gameCells = response.game.cells
     console.log('id', store.gameId)
     $('#board-game').show()
-    store.playerStat = x
+    store.playerStat = store.o
     console.log(store.playerStat)
 }
 
-const onCellSuccess = (event) => {
+const onCellSuccess = (response) => {
 
-    //console.log('r: ', response)
-    console.log('e: ', event)
-    event.currentTarget.innerText = store.playerStat
+    console.log('r: ', response)
+    console.log('e: ', store.event)
 
+    store.event.currentTarget.innerText = store.playerStat
+
+    store.isOver = store.over(response.game.cells)
+    console.log(response.game.cells)
 }
 
 const failure = () => {

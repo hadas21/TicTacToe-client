@@ -60,15 +60,14 @@ const onCell = function(event) {
     const toggle = function(value) {
         return { x: 'o', o: 'x' }[value]
     }
-    console.log('cell 1: ', store.playerStat)
     store.playerStat = toggle(store.playerStat)
-    console.log('cell 2: ', store.playerStat)
 
     const innerText = event.currentTarget.innerText
     if (!innerText) {
+        store.event = event
         api.cell(store.cellIndex, store.playerStat)
 
-        .then(ui.onCellSuccess(event))
+        .then(ui.onCellSuccess)
             .catch(ui.failure)
 
     } else {

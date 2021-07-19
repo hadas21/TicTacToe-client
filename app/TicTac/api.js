@@ -51,7 +51,7 @@ const cell = function(cellIndex, cellValue) {
                     index: cellIndex,
                     value: cellValue
                 },
-                over: false
+                over: store.isOver
             }
         }
     })
