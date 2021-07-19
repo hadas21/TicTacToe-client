@@ -1,3 +1,4 @@
+const store = require('../store')
 const getFormFields = require('./../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
@@ -51,10 +52,30 @@ const onNewGame = function() {
 
 }
 
-const onCell = function() {
-    console.log('x')
+const onCell = function(event) {
+    console.log('event is : ', event)
 
+    store.cellIndex = event.currentTarget.dataset.index
+
+    const toggle = function(value) {
+        return { x: 'o', o: 'x' }[value]
+    }
+    console.log('cell 1: ', store.playerStat)
+    store.playerStat = toggle(store.playerStat)
+    console.log('cell 2: ', store.playerStat)
+
+    const innerText = event.currentTarget.innerText
+    if (!innerText) {
+        api.cell(store.cellIndex, store.playerStat)
+
+        .then(ui.onCellSuccess(event))
+            .catch(ui.onCellFailure)
+        console.log('empty')
+    } else {
+        console.log('this space is taken')
+    }
 }
+
 module.exports = {
     onSignUpBtn,
     onSignUp,

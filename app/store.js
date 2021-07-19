@@ -1,7 +1,8 @@
 const store = {
     x: 'x',
     o: 'o',
-    playerStat: this.playerStat
+    playerStat: this.playerStat,
+    over: false
 
 
 }

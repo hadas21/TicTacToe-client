@@ -37,9 +37,30 @@ const newGame = function() {
     })
 }
 
+const cell = function(cellIndex, cellValue) {
+    console.log('index: ', cellIndex, 'value: ', cellValue)
+    return $.ajax({
+        method: 'PATCH',
+        url: config.apiUrl + '/games/' + store.gameId,
+        headers: {
+            Authorization: 'Bearer ' + store.userToken
+        },
+        data: {
+            game: {
+                cell: {
+                    index: cellIndex,
+                    value: cellValue
+                },
+                over: false
+            }
+        }
+    })
+}
+
 module.exports = {
     signUp,
     logIn,
     logOut,
-    newGame
+    newGame,
+    cell
 }

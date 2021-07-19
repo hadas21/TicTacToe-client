@@ -20,8 +20,9 @@ const onSignUpFailure = function() {
 
 const onLogInSuccess = (response) => {
     $('#welcome-user').text(`Hey, ${response.user.email}! good to have you back`)
-    console.log(response)
+
     store.userToken = response.user.token
+
     $('#log-in-form').hide().trigger('reset')
     $('#log-in-btn').hide()
     $('#log-out-btn').show()
@@ -42,21 +43,27 @@ const onLogOutSuccess = () => {
     $('#new-game-btn').hide()
 }
 
-const failure = () => {
-    alert('Something went wrong... try again')
-}
-
 const onNewGameSuccess = (response) => {
-    store.gameId = response.game.id
+    console.log('new game response: ', response)
+    store.gameId = response.game._id
     store.gameCells = response.game.cells
-
+    console.log('id', store.gameId)
     $('#board-game').show()
     store.playerStat = x
     console.log(store.playerStat)
 }
 
+const onCellSuccess = (event) => {
 
+    //console.log('r: ', response)
+    console.log('e: ', event)
+    event.currentTarget.innerText = store.playerStat
 
+}
+
+const failure = () => {
+    alert('Something went wrong... try again')
+}
 
 module.exports = {
     onSignUpSuccess,
@@ -65,6 +72,7 @@ module.exports = {
     onLogInFailure,
     onLogOutSuccess,
     onNewGameSuccess,
+    onCellSuccess,
     failure
 
 }
