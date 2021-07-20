@@ -53,14 +53,21 @@ const onNewGameSuccess = (response) => {
 }
 
 const onCellSuccess = (response) => {
-
-    console.log('r: ', response)
-    console.log('e: ', store.event)
-
+    //display x/o on board
     store.event.currentTarget.innerText = store.playerStat
-
+        //check for tie
+    const isTie = response.game.cells.every(cell => {
+            return !(cell === '')
+        })
+        //check for win
     store.isOver = store.over(response.game.cells)
-    console.log(response.game.cells)
+    if (store.isOver === true) {
+        $('.cell').off('click')
+        $('#message-user').text(`${store.playerStat} is the winner!!`)
+    } else if (store.isOver === false && isTie) {
+        $('#message-user').text("game over, it's a tie")
+    }
+    console.log(response)
 }
 
 const failure = () => {
