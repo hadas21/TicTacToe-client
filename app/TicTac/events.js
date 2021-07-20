@@ -65,7 +65,7 @@ const onCell = function(event) {
     store.playerStat = toggle(store.playerStat)
         //check if div is empty and then enable it
     const innerText = event.currentTarget.innerText
-    if (!innerText) {
+    if (!innerText && store.isOver === false) {
         store.event = event
         api.cell(store.cellIndex, store.playerStat)
 

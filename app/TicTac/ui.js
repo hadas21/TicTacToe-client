@@ -52,10 +52,30 @@ const onNewGameSuccess = (response) => {
     $('#board-game').show()
     $('.cell').empty().on('click')
 
-    store.playerStat = store.o
+    store.playerStat = 'o'
     console.log(store.playerStat)
 }
-
+const over = function(gameCells) {
+    if (gameCells[0] === gameCells[1] && gameCells[0] === gameCells[2] && !(gameCells[0] === '')) {
+        return true
+    } else if (gameCells[3] === gameCells[4] && gameCells[3] === gameCells[5] && !(gameCells[3] === '')) {
+        return true
+    } else if (gameCells[6] === gameCells[7] && gameCells[6] === gameCells[8] && !(gameCells[6] === '')) {
+        return true
+    } else if (gameCells[0] === gameCells[3] && gameCells[0] === gameCells[6] && !(gameCells[0] === '')) {
+        return true
+    } else if (gameCells[1] === gameCells[4] && gameCells[1] === gameCells[7] && !(gameCells[1] === '')) {
+        return true
+    } else if (gameCells[2] === gameCells[5] && gameCells[2] === gameCells[8] && !(gameCells[2] === '')) {
+        return true
+    } else if (gameCells[0] === gameCells[4] && gameCells[0] === gameCells[8] && !(gameCells[0] === '')) {
+        return true
+    } else if (gameCells[2] === gameCells[4] && gameCells[2] === gameCells[6] && !(gameCells[2] === '')) {
+        return true
+    } else {
+        return false
+    }
+}
 const onCellSuccess = (response) => {
 
     //display x/o on board
@@ -65,9 +85,8 @@ const onCellSuccess = (response) => {
             return !(cell === '')
         })
         //check for win
-    store.isOver = store.over(response.game.cells)
+    store.isOver = over(response.game.cells)
     if (store.isOver === true) {
-        $('.cell').off('click')
         $('#message-user').text(`${store.playerStat} is the winner!!`)
     } else if (store.isOver === false && isTie) {
         $('#message-user').text("game over, it's a tie")
