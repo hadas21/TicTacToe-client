@@ -45,6 +45,7 @@ const onLogOut = function() {
 }
 
 const onNewGame = function() {
+
     api.newGame()
         .then(ui.onNewGameSuccess)
         .catch(ui.failure)
@@ -53,15 +54,16 @@ const onNewGame = function() {
 }
 
 const onCell = function(event) {
+
     console.log('event is : ', event)
-
+        //attach index to each div
     store.cellIndex = event.currentTarget.dataset.index
-
+        //toggle x/o
     const toggle = function(value) {
         return { x: 'o', o: 'x' }[value]
     }
     store.playerStat = toggle(store.playerStat)
-
+        //check if div is empty and then enable it
     const innerText = event.currentTarget.innerText
     if (!innerText) {
         store.event = event

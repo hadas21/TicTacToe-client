@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const eventsTic = require('./events')
 
 const onSignUpSuccess = (response) => {
     alert(`Hey, ${response.user.email}, welcome! please log in`)
@@ -44,15 +45,19 @@ const onLogOutSuccess = () => {
 
 const onNewGameSuccess = (response) => {
     console.log('new game response: ', response)
+    store.isOver = false
     store.gameId = response.game._id
     store.gameCells = response.game.cells
     console.log('id', store.gameId)
     $('#board-game').show()
+    $('.cell').empty().on('click')
+
     store.playerStat = store.o
     console.log(store.playerStat)
 }
 
 const onCellSuccess = (response) => {
+
     //display x/o on board
     store.event.currentTarget.innerText = store.playerStat
         //check for tie
@@ -67,6 +72,7 @@ const onCellSuccess = (response) => {
     } else if (store.isOver === false && isTie) {
         $('#message-user').text("game over, it's a tie")
     }
+
     console.log(response)
 }
 
