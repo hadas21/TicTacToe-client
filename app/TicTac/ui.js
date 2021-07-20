@@ -1,18 +1,14 @@
 'use strict'
 
 const store = require('../store')
-const eventsTic = require('./events')
 
 const onSignUpSuccess = (response) => {
     alert(`Hey, ${response.user.email}, welcome! please log in`)
     $('#welcome-user').text(`Hey, ${response.user.email}. thanks for signing up =)`)
-    $('#sign-up-form').hide()
-
-
+    $('#sign-up-form').hide().trigger('reset')
 }
 
 const onSignUpFailure = function() {
-
     $('#sign-up-form').trigger('reset')
     alert('something went wrong =( try again')
     $('#sign-up-btn').show()
@@ -40,7 +36,9 @@ const onLogOutSuccess = () => {
     $('#welcome-user').text(`Bye now`)
     $('#log-out-btn').hide()
     $('#log-in-btn').show()
+    $('#sign-up-btn').show()
     $('#new-game-btn').hide()
+    $('#board-game').hide()
 }
 
 const onNewGameSuccess = (response) => {
