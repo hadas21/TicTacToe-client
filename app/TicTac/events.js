@@ -2,10 +2,11 @@ const store = require('../store')
 const getFormFields = require('./../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-
+    // store.formIsOpen = false
 const onSignUpBtn = function() {
     $('#sign-up-form').show()
     $('#sign-up-btn').hide()
+        // store.formIsOpen = true
 }
 
 const onSignUp = function(event) {
@@ -22,6 +23,7 @@ const onSignUp = function(event) {
 const onLogInBtn = function() {
     $('#log-in-form').show()
     $('#log-in-btn').hide()
+        // store.formIsOpen = true
 }
 
 const onLogIn = function(event) {
@@ -77,6 +79,13 @@ const onCell = function(event) {
     }
 }
 
+// const onBody = function() {
+//     if (store.formIsOpen === true) {
+//         $('#sign-up-form').hide()
+//         $('#log-in-form').hide()
+//     }
+// }
+
 module.exports = {
     onSignUpBtn,
     onSignUp,
@@ -84,5 +93,6 @@ module.exports = {
     onLogIn,
     onLogOut,
     onNewGame,
-    onCell
+    onCell //,
+    // onBody
 }

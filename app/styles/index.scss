@@ -1,5 +1,28 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Zen+Loop&display=swap');
+* {
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Zen Loop', cursive;
+    color: #01937C;
+}
+
+body {
+    background-color: #FAF1E6;
+}
+
 .cell {
-    height: 100px;
+    height: 150px;
     font-size: large;
+    background-color: #B6C867;
+}
+
+.btn-outline {
+    border-color: #01937C;
+    color: #01937C;
+}
+
+.btn-outline:hover {
+    background-color: #FFC074;
+    border-color: #FFC074;
+    color: #01937C;
 }
