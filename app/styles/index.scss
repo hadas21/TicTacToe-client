@@ -1,24 +1,36 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Zen+Loop&display=swap');
 * {
+    box-sizing: border-box;
     font-family: 'Amatic SC', cursive;
     font-family: 'Zen Loop', cursive;
     color: #01937C;
+    text-align: center;
 }
 
 body {
     background-color: #FAF1E6;
+    height: 97vh;
 }
 
-.cell {
-    height: 150px;
-    font-size: large;
-    background-color: #B6C867;
+header {
+    margin: 0;
+    background-color: #FFC074;
+}
+
+#forms {
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .btn-outline {
     border-color: #01937C;
     color: #01937C;
+    margin: 5px;
 }
 
 .btn-outline:hover {
@@ -26,3 +38,45 @@ body {
     border-color: #FFC074;
     color: #01937C;
 }
+
+.left-center {
+    margin-left: 50px;
+}
+
+.right-center {
+    margin-right: 50px;
+}
+
+#center {
+    border: 1px solid #FFC074;
+    padding: 40px;
+    flex-basis: auto;
+    &:hover {
+        border-color: #01937C;
+    }
+}
+
+#board-game {
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    border: 1px solid #B6C867;
+    padding: 20px;
+    max-height: calc(100vh - 200px);
+    max-width: calc(100vh - 200px);
+}
+
+.cell {
+    min-height: calc(100% / 3);
+    font-size: large;
+    background-color: #B6C867;
+    font-size: 5rem;
+}
+
+#message-user {
+    margin: 5rem;
+    font-weight: bold;
+}
+
+// 0587341116

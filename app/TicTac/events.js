@@ -6,6 +6,7 @@ const ui = require('./ui')
 const onSignUpBtn = function() {
     $('#sign-up-form').show()
     $('#sign-up-btn').hide()
+    $('.center').css({ position: 'fixed', top: '30%', border: 'none' })
         // store.formIsOpen = true
 }
 
@@ -62,7 +63,7 @@ const onCell = function(event) {
     store.cellIndex = event.currentTarget.dataset.index
         //toggle x/o
     const toggle = function(value) {
-        return { x: 'o', o: 'x' }[value]
+        return { X: 'O', O: 'X' }[value]
     }
     store.playerStat = toggle(store.playerStat)
         //check if div is empty and then enable it

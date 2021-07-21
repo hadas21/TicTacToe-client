@@ -3,7 +3,6 @@
 const store = require('../store')
 
 const onSignUpSuccess = (response) => {
-    alert(`Hey, ${response.user.email}, welcome! please log in`)
     $('#welcome-user').text(`Hey, ${response.user.email}. thanks for signing up =)`)
     $('#sign-up-form').hide().trigger('reset')
 }
@@ -24,6 +23,8 @@ const onLogInSuccess = (response) => {
     $('#log-out-btn').show()
     $('#new-game-btn').show()
     $('#sign-up-btn').hide()
+    $('#sign-up-form').hide()
+    $('header').show()
 }
 
 const onLogInFailure = function() {
@@ -33,15 +34,17 @@ const onLogInFailure = function() {
 }
 
 const onLogOutSuccess = () => {
-    $('#welcome-user').text(`Bye now`)
+    alert('Are you sure you want to leave?')
     $('#log-out-btn').hide()
     $('#log-in-btn').show()
     $('#sign-up-btn').show()
     $('#new-game-btn').hide()
     $('#board-game').hide()
+    $('#center').show()
 }
 
 const onNewGameSuccess = (response) => {
+
     console.log('new game response: ', response)
     store.isOver = false
     store.gameId = response.game._id
@@ -49,8 +52,8 @@ const onNewGameSuccess = (response) => {
     console.log('id', store.gameId)
     $('#board-game').show()
     $('.cell').empty().on('click')
-
-    store.playerStat = 'o'
+    $('#center').hide()
+    store.playerStat = 'O'
     console.log(store.playerStat)
 }
 const over = function(gameCells) {

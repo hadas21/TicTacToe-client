@@ -14,18 +14,19 @@
 </head>
 
 <body>
-    <header>
-        <h1>TicTacToe</h1>
-        <p id="welcome-user"></p>
-        <p id="message-user"></p>
-    </header>
-    <button id="sign-up-btn" class="btn btn-outline">Sign Up</button>
-    <button id="log-in-btn" class="btn btn-outline">Log In</button>
-    <button id="log-out-btn" class="btn btn-outline">Log Out</button>
-    <button id="new-game-btn" class="btn btn-outline">New Game</button>
 
-    <div class="container">
-        <form id="sign-up-form">
+
+    <header class="container row">
+
+        <button id="log-out-btn" class="btn btn-outline col-1 btn-sm">Log Out</button>
+        <h1 class="col-9">TicTacToe</h1>
+        <button id="new-game-btn" class="btn btn-outline col-1 btn-sm">New Game</button>
+    </header>
+    <p id="message-user"></p>
+
+    <section id="forms" class="container row">
+        <button id="sign-up-btn" class="btn btn-outline col-1 left-center">Sign Up</button>
+        <form id="sign-up-form" class="col-4">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input name="credentials[email]" placeholder="an@example.email" type="email" class="form-control" aria-describedby="emailHelp">
@@ -42,13 +43,15 @@
 
             <button type="submit" class="btn btn-outline">Sign Up</button>
         </form>
+        <div id="center" class="col-3">
+            <h1>TicTacToe</h1>
+            <p>-X-O-X-O-X-O-</p>
+            <p id="welcome-user"></p>
 
+        </div>
+        <button id="log-in-btn" class="btn btn-outline col-1 right-center">Log In</button>
 
-    </div>
-
-    <div class="container">
-
-        <form id="log-in-form">
+        <form id="log-in-form" class="col-4">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input name="credentials[email]" placeholder="an@example.email" type="email" class="form-control" aria-describedby="emailHelp">
@@ -60,42 +63,24 @@
 
             <button type="submit" class="btn btn-outline">Log In</button>
         </form>
+        <section id="board-game" class="container row h-100">
+            <div data-index="0" class="col-4 cell border"></div>
+            <div data-index="1" class="col-4 cell border"></div>
+            <div data-index="2" class="col-4 cell border"></div>
+            <div data-index="3" class="col-4 cell border"></div>
+            <div data-index="4" class="col-4 cell border"></div>
+            <div data-index="5" class="col-4 cell border"></div>
+            <div data-index="6" class="col-4 cell border"></div>
+            <div data-index="7" class="col-4 cell border"></div>
+            <div data-index="8" class="col-4 cell border"></div>
+        </section>
 
 
-    </div>
 
-    <div id="board-game" class="container row">
-        <div data-index="0" class="col-4 cell border">
-
-        </div>
-        <div data-index="1" class="col-4 cell border">
-
-        </div>
-        <div data-index="2" class="col-4 cell border">
-
-        </div>
-        <div data-index="3" class="col-4 cell border">
+    </section>
 
 
-        </div>
-        <div data-index="4" class="col-4 cell border">
 
-        </div>
-        <div data-index="5" class="col-4 cell border">
-
-        </div>
-        <div data-index="6" class="col-4 cell border">
-
-        </div>
-        <div data-index="7" class="col-4 cell border">
-
-        </div>
-        <div data-index="8" class="col-4 cell border">
-
-        </div>
-
-
-    </div>
 </body>
 
 </html>
