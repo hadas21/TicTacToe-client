@@ -6,20 +6,25 @@
     font-family: 'Zen Loop', cursive;
     color: #01937C;
     text-align: center;
+    font-size: large;
 }
 
 body {
     background-color: #FAF1E6;
-    height: 97vh;
+    height: 100vh;
 }
 
 header {
     margin: 0;
     background-color: #FFC074;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #forms {
-    height: 100vh;
+    height: 94vh;
     margin: auto;
     display: flex;
     flex-flow: row nowrap;
@@ -51,16 +56,20 @@ header {
     border: 1px solid #FFC074;
     padding: 40px;
     flex-basis: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     &:hover {
         border-color: #01937C;
     }
 }
 
 #board-game {
-    // position: absolute;
-    // left: 50%;
-    // top: 50%;
-    // transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     border: 1px solid #B6C867;
     padding: 20px;
     max-height: calc(100vh - 200px);
@@ -69,14 +78,19 @@ header {
 
 .cell {
     min-height: calc(100% / 3);
+    max-height: calc(100% / 3);
     font-size: large;
     background-color: #B6C867;
-    font-size: 5rem;
+    vertical-align: middle; // font-size: 4rem;
 }
 
 #message-user {
-    margin: 5rem;
-    font-weight: bold;
+    margin-bottom: 0, 0, 100px, 0;
+    font-weight: bolder;
+}
+
+#header-h1 {
+    align-self: center;
 }
 
 // 0587341116

@@ -41,6 +41,7 @@ const onLogOutSuccess = () => {
     $('#new-game-btn').hide()
     $('#board-game').hide()
     $('#center').show()
+    $('#message-user').empty()
 }
 
 const onNewGameSuccess = (response) => {
@@ -53,6 +54,7 @@ const onNewGameSuccess = (response) => {
     $('#board-game').show()
     $('.cell').empty().on('click')
     $('#center').hide()
+    $('#message-user').empty()
     store.playerStat = 'O'
     console.log(store.playerStat)
 }
