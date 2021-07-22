@@ -93,4 +93,10 @@ header {
     align-self: center;
 }
 
+@media (max-width: 400px) {
+    #forms {
+        flex-flow: column nowrap;
+    }
+}
+
 // 0587341116
