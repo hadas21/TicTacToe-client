@@ -8,7 +8,7 @@ const onSignUpSuccess = (response) => {
 }
 
 const onSignUpFailure = function() {
-    $('#sign-up-form').trigger('reset')
+    $('#sign-up-form').trigger('reset').hide()
     alert('something went wrong =( try again')
     $('#sign-up-btn').show()
 }
@@ -41,23 +41,23 @@ const onLogOutSuccess = () => {
     $('#new-game-btn').hide()
     $('#board-game').hide()
     $('#center').show()
-    $('#message-user').empty()
+    $('#welcome-user').text('thank you for playing')
 }
 
 const onNewGameSuccess = (response) => {
-
-    console.log('new game response: ', response)
     store.isOver = false
     store.gameId = response.game._id
     store.gameCells = response.game.cells
-    console.log('id', store.gameId)
+
     $('#board-game').show()
     $('.cell').empty().on('click')
     $('#center').hide()
     $('#message-user').empty()
-    store.playerStat = 'O'
-    console.log(store.playerStat)
+
+    store.playerMove = 'O'
+    console.log(store.playerMove)
 }
+
 const over = function(gameCells) {
     if (gameCells[0] === gameCells[1] && gameCells[0] === gameCells[2] && !(gameCells[0] === '')) {
         return true
@@ -80,7 +80,6 @@ const over = function(gameCells) {
     }
 }
 const onCellSuccess = (response) => {
-
     //display x/o on board
     store.event.currentTarget.innerText = store.playerStat
         //check for tie
@@ -94,8 +93,6 @@ const onCellSuccess = (response) => {
     } else if (store.isOver === false && isTie) {
         $('#message-user').text("game over, it's a tie")
     }
-
-    console.log(response)
 }
 
 const failure = () => {
@@ -111,5 +108,4 @@ module.exports = {
     onNewGameSuccess,
     onCellSuccess,
     failure
-
 }

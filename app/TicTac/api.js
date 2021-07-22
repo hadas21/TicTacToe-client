@@ -38,7 +38,6 @@ const newGame = function() {
 }
 
 const cell = function(cellIndex, cellValue) {
-    console.log('index: ', cellIndex, 'value: ', cellValue)
     return $.ajax({
         method: 'PATCH',
         url: config.apiUrl + '/games/' + store.gameId,

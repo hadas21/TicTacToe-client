@@ -20,7 +20,4 @@ $(() => {
     $('#new-game-btn').hide().on('click', eventsTic.onNewGame)
 
     $('.cell').on('click', eventsTic.onCell)
-        // $('body').on('click', eventsTic.onBody)
-
-
 })

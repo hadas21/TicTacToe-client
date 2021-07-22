@@ -14,23 +14,19 @@
 </head>
 
 <body>
-
-
     <header>
-
         <button id="log-out-btn" class="btn btn-outline col-1 btn-sm">Log Out</button>
         <h1 id="header-h1" class="col-9">TicTacToe</h1>
         <button id="new-game-btn" class="btn btn-outline col-1 btn-sm">New Game</button>
     </header>
 
-
     <section id="forms" class="container row">
-        <button id="sign-up-btn" class="btn btn-outline col-1 left-center">Sign Up</button>
+        <button id="sign-up-btn" class="btn btn-outline col-2 left-center">Sign Up</button>
         <form id="sign-up-form" class="col-4">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input name="credentials[email]" placeholder="an@example.email" type="email" class="form-control" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Don't enter a real email or password! this website is not secured</div>
+                <div id="emailHelp" class="form-text">Don't enter a real email or password! this website is not secure</div>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -49,7 +45,7 @@
             <p id="welcome-user"></p>
 
         </div>
-        <button id="log-in-btn" class="btn btn-outline col-1 right-center">Log In</button>
+        <button id="log-in-btn" class="btn btn-outline col-2 right-center">Log In</button>
 
         <form id="log-in-form" class="col-4">
             <div class="mb-3">
@@ -74,12 +70,7 @@
             <div data-index="7" class="col-4 cell border"></div>
             <div data-index="8" class="col-4 cell border"></div>
         </section>
-
-
-
-
     </section>
-
     <p id="message-user"></p>
 </body>
 

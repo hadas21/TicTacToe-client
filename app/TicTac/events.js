@@ -2,12 +2,10 @@ const store = require('../store')
 const getFormFields = require('./../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-    // store.formIsOpen = false
 const onSignUpBtn = function() {
     $('#sign-up-form').show()
     $('#sign-up-btn').hide()
     $('.center').css({ position: 'fixed', top: '30%', border: 'none' })
-        // store.formIsOpen = true
 }
 
 const onSignUp = function(event) {
@@ -24,7 +22,6 @@ const onSignUp = function(event) {
 const onLogInBtn = function() {
     $('#log-in-form').show()
     $('#log-in-btn').hide()
-        // store.formIsOpen = true
 }
 
 const onLogIn = function(event) {
@@ -35,8 +32,6 @@ const onLogIn = function(event) {
     api.logIn(data)
         .then(ui.onLogInSuccess)
         .catch(ui.onLogInFailure)
-
-
 }
 
 const onLogOut = function() {
@@ -52,40 +47,25 @@ const onNewGame = function() {
     api.newGame()
         .then(ui.onNewGameSuccess)
         .catch(ui.failure)
-
-
 }
 
 const onCell = function(event) {
-
-    console.log('event is : ', event)
-        //attach index to each div
+    //attach index to each div
     store.cellIndex = event.currentTarget.dataset.index
         //toggle x/o
     const toggle = function(value) {
         return { X: 'O', O: 'X' }[value]
     }
-    store.playerStat = toggle(store.playerStat)
+    store.playerMove = toggle(store.playerMove)
         //check if div is empty and then enable it
     const innerText = event.currentTarget.innerText
     if (!innerText && store.isOver === false) {
         store.event = event
-        api.cell(store.cellIndex, store.playerStat)
-
-        .then(ui.onCellSuccess)
+        api.cell(store.cellIndex, store.playerMove)
+            .then(ui.onCellSuccess)
             .catch(ui.failure)
-
-    } else {
-        console.log('this space is taken')
     }
 }
-
-// const onBody = function() {
-//     if (store.formIsOpen === true) {
-//         $('#sign-up-form').hide()
-//         $('#log-in-form').hide()
-//     }
-// }
 
 module.exports = {
     onSignUpBtn,
@@ -94,6 +74,5 @@ module.exports = {
     onLogIn,
     onLogOut,
     onNewGame,
-    onCell //,
-    // onBody
+    onCell
 }
