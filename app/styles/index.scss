@@ -80,14 +80,16 @@ header {
 .cell {
     min-height: calc(100% / 3);
     max-height: calc(100% / 3);
-    font-size: large;
+    font-size: 3rem;
     background-color: #B6C867;
-    vertical-align: middle; // font-size: 4rem;
+    vertical-align: middle;
+    align-content: center;
 }
 
 #message-user {
     margin-bottom: 0, 0, 100px, 0;
     font-weight: bolder;
+    font-size: 3rem;
 }
 
 #header-h1 {

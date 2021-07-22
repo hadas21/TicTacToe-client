@@ -81,7 +81,7 @@ const over = function(gameCells) {
 }
 const onCellSuccess = (response) => {
     //display x/o on board
-    store.event.currentTarget.innerText = store.playerStat
+    store.event.currentTarget.innerText = store.playerMove
         //check for tie
     const isTie = response.game.cells.every(cell => {
             return !(cell === '')
@@ -89,7 +89,7 @@ const onCellSuccess = (response) => {
         //check for win
     store.isOver = over(response.game.cells)
     if (store.isOver === true) {
-        $('#message-user').text(`${store.playerStat} is the winner!!`)
+        $('#message-user').text(`${store.playerMove} is the winner!!`)
     } else if (store.isOver === false && isTie) {
         $('#message-user').text("game over, it's a tie")
     }
