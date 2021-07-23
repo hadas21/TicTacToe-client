@@ -48,18 +48,21 @@ const onNewGame = function() {
         .then(ui.onNewGameSuccess)
         .catch(ui.failure)
 }
-
+const toggle = function(value) {
+    return { X: 'O', O: 'X' }[value]
+}
 const onCell = function(event) {
     //attach index to each div
 
     //check if div is empty and then enable it
-    const innerText = event.currentTarget.innerText
-    if (!innerText && store.isOver === false) {
-        store.cellIndex = event.currentTarget.dataset.index
+    const innerText = $(event.target).text()
+
+    if (!innerText && !store.isOver) {
+
+        store.cellIndex = $(event.target).data('index')
+        console.log(store.cellIndex)
             //toggle x/o
-        const toggle = function(value) {
-            return { X: 'O', O: 'X' }[value]
-        }
+
         store.playerMove = toggle(store.playerMove)
         store.event = event
         api.cell(store.cellIndex, store.playerMove)

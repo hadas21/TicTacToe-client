@@ -1,3 +1,9 @@
+### Tic-Tac-Toe
+welcome to my first app. In this Tic-Tac-Toe you can practice different strategies by playing against yourself in order to become a real Tic-Tac-Toe champ.
+[Click here](https://hadas21.github.io/TicTacToe-client/) to try it out.
+
+---
+
 ### User Story
 
 As a user I want to sign up/in/out as a player
@@ -17,8 +23,11 @@ As a user I want to start a new game at any point in time
 
 ---
 
-### Wireframes
+### Wireframes   
 
-![wire frame for phone](https://ibb.co/xmbkv8L)
 
-![wire frame for mac](https://ibb.co/9HfSDkV)
+![welcome screen](./lib/photos/welcome%20screen.png)
+---
+![sign up/in forms](./lib/photos/sign%20up:%20in%20forms.png)
+---
+![game board](./lib/photos/game%20board.png)
