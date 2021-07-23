@@ -29,7 +29,7 @@ const onLogInSuccess = (response) => {
 
 const onLogInFailure = function() {
     alert("Sorry, the input does'nt match with our system")
-    $('#log-in-form').trigger('reset')
+    $('#log-in-form').trigger('reset').hide()
     $('#log-in-btn').show()
 }
 
