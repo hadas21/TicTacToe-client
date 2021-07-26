@@ -1,7 +1,16 @@
 ### Tic-Tac-Toe
-welcome to my first app. In this Tic-Tac-Toe you can practice different strategies by playing against yourself in order to become a real Tic-Tac-Toe champ.
+welcome to my first app. 
+In this Tic-Tac-Toe you can practice different strategies by playing against yourself in order to become a real Tic-Tac-Toe champ.
 [Click here](https://hadas21.github.io/TicTacToe-client/) to try it out.
 
+---
+## Instructions
+
+1. Fork and clone this repository.
+1. Change into the new directory.
+2. Create and checkout a new branch.
+3. run `grunt serve` in your terminal to open app in browser.
+4. for new code contribution, push to your fork and submit a pull request.
 ---
 
 ### User Story

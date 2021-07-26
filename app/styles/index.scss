@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Zen+Loop&display=swap');
 * {
     box-sizing: border-box;
-    font-family: 'Amatic SC', cursive;
-    font-family: 'Quicksand', sans-serif;
     font-family: 'Zen Loop', cursive;
     color: #01937C;
     text-align: center;
@@ -13,19 +11,22 @@
 body {
     background-color: #FAF1E6;
     height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 header {
+    height: 20vh;
     margin: 0;
     background-color: #FFC074;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 #forms {
-    height: 94vh;
+    height: 70vh;
     margin: auto;
     display: flex;
     flex-flow: row nowrap;
@@ -61,17 +62,14 @@ header {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    &:hover {
-        border-color: #01937C;
-    }
 }
 
 #board-game {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid #B6C867;
+    top: 65%;
+    transform: translate(-50%, -65%);
+    //border: 1px solid #B6C867;
     padding: 20px;
     max-height: calc(100vh - 200px);
     max-width: calc(100vh - 200px);
@@ -82,8 +80,10 @@ header {
     max-height: calc(100% / 3);
     font-size: 3rem;
     background-color: #B6C867;
+    padding: 3% 0 3%;
+    // align-content: center;
+    text-align: center;
     vertical-align: middle;
-    align-content: center;
 }
 
 #message-user {
@@ -97,8 +97,17 @@ header {
 }
 
 @media (max-width: 400px) {
+    body {
+        font-size: medium;
+    }
+    header {
+        height: 10vh;
+    }
     #forms {
         flex-flow: column nowrap;
+    }
+    #board-game {
+        margin: auto;
     }
 }
 

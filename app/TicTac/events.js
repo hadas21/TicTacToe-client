@@ -48,20 +48,20 @@ const onNewGame = function() {
         .then(ui.onNewGameSuccess)
         .catch(ui.failure)
 }
+
 const toggle = function(value) {
+    //toggle x/o (ternary traditionally used, but discovered new way)
     return { X: 'O', O: 'X' }[value]
 }
 const onCell = function(event) {
-    //attach index to each div
+
 
     //check if div is empty and then enable it
     const innerText = $(event.target).text()
 
     if (!innerText && !store.isOver) {
-
+        //attach index to each div
         store.cellIndex = $(event.target).data('index')
-        console.log(store.cellIndex)
-            //toggle x/o
 
         store.playerMove = toggle(store.playerMove)
         store.event = event
