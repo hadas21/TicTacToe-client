@@ -25,6 +25,7 @@ const onLogInSuccess = (response) => {
     $('#sign-up-btn').hide()
     $('#sign-up-form').hide()
     $('header').show()
+    $('#tic2').hide()
 }
 
 const onLogInFailure = function() {

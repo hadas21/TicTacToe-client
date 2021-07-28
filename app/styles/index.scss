@@ -10,9 +10,9 @@
 
 body {
     background-color: #FAF1E6;
-    height: 100vh;
-    display: flex;
-    flex-flow: column nowrap;
+    //height: 100vh;
+    // display: flex;
+    // flex-flow: column nowrap;
 }
 
 header {
@@ -25,15 +25,17 @@ header {
     align-items: center;
 }
 
-#forms {
-    height: 70vh;
-    margin: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+form {
+    margin: 5px;
 }
 
+// #forms {
+//     height: 70vh;
+//     display: flex;
+//     flex-flow: row nowrap;
+//     justify-content: space-between;
+//     align-items: center;
+// }
 .btn-outline {
     border-color: #01937C;
     color: #01937C;
@@ -56,23 +58,24 @@ header {
 
 #center {
     border: 1px solid #FFC074;
-    padding: 40px;
-    flex-basis: auto;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    //     padding: 40px;
+    //     flex-basis: auto;
+    //     position: absolute;
+    //     left: 50%;
+    //     top: 50%;
+    //     transform: translate(-50%, -50%);
 }
 
 #board-game {
-    position: absolute;
-    left: 50%;
-    top: 65%;
-    transform: translate(-50%, -65%);
+    // position: absolute;
+    // left: 50%;
+    // top: 65%;
+    // transform: translate(-50%, -65%);
     //border: 1px solid #B6C867;
     padding: 20px;
     max-height: calc(100vh - 200px);
     max-width: calc(100vh - 200px);
+    margin: auto 0;
 }
 
 .cell {

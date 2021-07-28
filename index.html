@@ -20,57 +20,74 @@
         <button id="new-game-btn" class="btn btn-outline col-1 btn-sm">New Game</button>
     </header>
 
-    <section id="forms" class="container row">
-        <button id="sign-up-btn" class="btn btn-outline col-2 left-center">Sign Up</button>
-        <form id="sign-up-form" class="col-4">
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input name="credentials[email]" placeholder="an@example.email" type="email" class="form-control" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Don't enter a real email or password! this website is not secure</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input name="credentials[password]" type="password" class="form-control">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password Confirmation</label>
-                <input name="credentials[password_confirmation]" type="password" class="form-control">
-            </div>
 
-            <button type="submit" class="btn btn-outline">Sign Up</button>
-        </form>
-        <div id="center" class="col-3">
-            <h1>TicTacToe</h1>
-            <p>-X-O-X-O-X-O-</p>
-            <p id="welcome-user"></p>
 
-        </div>
-        <button id="log-in-btn" class="btn btn-outline col-2 right-center">Log In</button>
-
-        <form id="log-in-form" class="col-4">
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input name="credentials[email]" placeholder="an@example.email" type="email" class="form-control" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input name="credentials[password]" type="password" class="form-control">
-            </div>
-
-            <button type="submit" class="btn btn-outline">Log In</button>
-        </form>
-        <section id="board-game" class="container row h-100 text-xl-center">
+    <div id="center" class="col-med-12 ">
+        <h1 id="tic2">TicTacToe</h1>
+        <p>-X-O-X-O-X-O-</p>
+        <p id="welcome-user"></p>
+    </div>
+    <section id="board-game" class="position-absolute top-50 start-50 translate-middle">
+        <div class="row">
             <div data-index="0" class="col-4 cell border"></div>
             <div data-index="1" class="col-4 cell border"></div>
             <div data-index="2" class="col-4 cell border"></div>
+        </div>
+        <div class="row">
             <div data-index="3" class="col-4 cell border"></div>
             <div data-index="4" class="col-4 cell border"></div>
             <div data-index="5" class="col-4 cell border"></div>
+        </div>
+        <div class="row">
             <div data-index="6" class="col-4 cell border"></div>
             <div data-index="7" class="col-4 cell border"></div>
             <div data-index="8" class="col-4 cell border"></div>
-        </section>
+        </div>
     </section>
+
+
+
+    <div class="row">
+        <div class="col-6">
+            <button id="sign-up-btn" class="btn btn-outline">Sign Up</button>
+
+            <form id="sign-up-form">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input name="credentials[email]" placeholder="an@example.email" type="email" class="form-control" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Don't enter a real email or password! this website is not secure</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input name="credentials[password]" type="password" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password Confirmation</label>
+                    <input name="credentials[password_confirmation]" type="password" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-outline">Sign Up</button>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <button id="log-in-btn" class="btn btn-outline">Log In</button>
+            <form id="log-in-form">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input name="credentials[email]" placeholder="an@example.email" type="email" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input name="credentials[password]" type="password" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-outline">Log In</button>
+            </form>
+        </div>
+    </div>
+
+
     <p id="message-user"></p>
 </body>
 
