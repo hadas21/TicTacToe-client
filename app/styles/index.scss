@@ -48,14 +48,12 @@ form {
     color: #01937C;
 }
 
-.left-center {
-    margin-left: 50px;
-}
-
-.right-center {
-    margin-right: 50px;
-}
-
+// .left-center {
+//     margin-left: 50px;
+// }
+// .right-center {
+//     margin-right: 50px;
+// }
 #center {
     border: 1px solid #FFC074;
     //     padding: 40px;
@@ -105,12 +103,6 @@ form {
     }
     header {
         height: 10vh;
-    }
-    #forms {
-        flex-flow: column nowrap;
-    }
-    #board-game {
-        margin: auto;
     }
 }
 
