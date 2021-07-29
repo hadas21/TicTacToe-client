@@ -5,6 +5,7 @@ const store = require('../store')
 const onSignUpSuccess = (response) => {
     $('#welcome-user').text(`Hey, ${response.user.email}. thanks for signing up =)`)
     $('#sign-up-form').hide().trigger('reset')
+    $('#center').show()
 }
 
 const onSignUpFailure = function() {
@@ -15,6 +16,7 @@ const onSignUpFailure = function() {
 
 const onLogInSuccess = (response) => {
     $('#welcome-user').text(`Hey, ${response.user.email}! good to have you back`)
+    $('#center').show()
 
     store.userToken = response.user.token
 
@@ -25,11 +27,13 @@ const onLogInSuccess = (response) => {
     $('#sign-up-btn').hide()
     $('#sign-up-form').hide()
     $('header').show()
-    $('#tic2').hide()
+        // $('#message-user').show()
 }
 
 const onLogInFailure = function() {
-    alert("Sorry, the input does'nt match with our system")
+    // alert("Sorry, the input does'nt match with our system")
+    console.log('fail')
+    $('#log-in-modal').show()
     $('#log-in-form').trigger('reset').hide()
     $('#log-in-btn').show()
 }
@@ -43,6 +47,7 @@ const onLogOutSuccess = () => {
     $('#board-game').hide()
     $('#center').show()
     $('#welcome-user').text('thank you for playing')
+    $('#message-user').empty()
 }
 
 const onNewGameSuccess = (response) => {

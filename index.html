@@ -15,46 +15,26 @@
 
 <body>
     <header>
-        <button id="log-out-btn" class="btn btn-outline col-1 btn-sm">Log Out</button>
-        <h1 id="header-h1" class="col-9">TicTacToe</h1>
-        <button id="new-game-btn" class="btn btn-outline col-1 btn-sm ">New Game</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <button id="sign-up-btn" class="btn btn-outline btn-sm">Sign Up</button>
+                    <button id="log-out-btn" class="btn btn-outline btn-sm">Log Out</button>
+
+                </div>
+
+                <div class="col-4">
+                    <h1 id="header-h1" class="col-9">TicTacToe</h1>
+                </div>
+
+                <div class="col-4">
+                    <button id="log-in-btn" class="btn btn-outline btn-sm">Log In</button>
+                    <button id="new-game-btn" class="btn btn-outline  btn-sm ">New Game</button>
+
+                </div>
+            </div>
+        </div>
     </header>
-
-    <div id="center" class="container">
-        <div class="row">
-            <div class="col-4">
-                <button id="sign-up-btn" class="btn btn-outline btn-sm">Sign Up</button>
-            </div>
-            <div class="col-4">
-                <h1>TicTacToe</h1>
-                <p>-X-O-X-O-X-O-</p>
-                <p id="welcome-user"></p>
-            </div>
-            <div class="col-4">
-                <button id="log-in-btn" class="btn btn-outline btn-sm">Log In</button>
-            </div>
-        </div>
-    </div>
-    <section id="board-game" class="position-absolute top-50 start-50 translate-middle">
-        <div class="row">
-            <div data-index="0" class="col-4 cell border"></div>
-            <div data-index="1" class="col-4 cell border"></div>
-            <div data-index="2" class="col-4 cell border"></div>
-        </div>
-        <div class="row">
-            <div data-index="3" class="col-4 cell border"></div>
-            <div data-index="4" class="col-4 cell border"></div>
-            <div data-index="5" class="col-4 cell border"></div>
-        </div>
-        <div class="row">
-            <div data-index="6" class="col-4 cell border"></div>
-            <div data-index="7" class="col-4 cell border"></div>
-            <div data-index="8" class="col-4 cell border"></div>
-        </div>
-    </section>
-
-
-
     <div class="row">
         <div class="col-6">
 
@@ -78,6 +58,23 @@
             </form>
         </div>
 
+        <div id="log-in-modal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="log-in-modal-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Got it</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="col-6">
             <form id="log-in-form">
                 <div class="mb-3">
@@ -94,8 +91,38 @@
         </div>
     </div>
 
+    <section class="position-absolute top-50 start-50 translate-middle">
+        <div id="center">
+            <p>-X-O-X-O-X-O-X-O-X-O-</p>
+            <p id="welcome-user">Feal free to sign up! <br> If you did, come on and sign in</p>
 
-    <p id="message-user"></p>
+        </div>
+    </section>
+    <div>
+        <p id="message-user"></p>
+    </div>
+    <section id="board-game-wrapper">
+        <div id="board-game" class="container">
+            <div class="row ">
+                <div data-index="0" class="col-4 cell border"></div>
+                <div data-index="1" class="col-4 cell border"></div>
+                <div data-index="2" class="col-4 cell border"></div>
+            </div>
+            <div class="row">
+                <div data-index="3" class="col-4 cell border"></div>
+                <div data-index="4" class="col-4 cell border"></div>
+                <div data-index="5" class="col-4 cell border"></div>
+            </div>
+            <div class="row">
+                <div data-index="6" class="col-4 cell border"></div>
+                <div data-index="7" class="col-4 cell border"></div>
+                <div data-index="8" class="col-4 cell border"></div>
+            </div>
+        </div>
+    </section>
+
+
+
 </body>
 
 </html>

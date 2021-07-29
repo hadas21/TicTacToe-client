@@ -10,7 +10,7 @@
 
 body {
     background-color: #FAF1E6;
-    //height: 100vh;
+    height: 100vh;
     // display: flex;
     // flex-flow: column nowrap;
 }
@@ -27,6 +27,10 @@ header {
 
 form {
     margin: 5px;
+}
+
+h1 {
+    margin: auto;
 }
 
 // #forms {
@@ -56,6 +60,7 @@ form {
 // }
 #center {
     border: 1px solid #FFC074;
+    padding: 10px;
     //     padding: 40px;
     //     flex-basis: auto;
     //     position: absolute;
@@ -70,18 +75,26 @@ form {
     // top: 65%;
     // transform: translate(-50%, -65%);
     //border: 1px solid #B6C867;
-    padding: 20px;
-    max-height: calc(100vh - 200px);
-    max-width: calc(100vh - 200px);
-    margin: auto 0;
+    // padding: 20px;
+    // max-height: calc(100vh - 200px);
+    // max-width: calc(100vh - 200px);
+    //margin: auto 20%;
+    height: inherit;
 }
 
+// #board-game-wrapper {
+//     height: 75%;
+// }
+// .row-hiehy {
+//     height: calc(100% / 3);
+// }
 .cell {
-    min-height: calc(100% / 3);
-    max-height: calc(100% / 3);
-    font-size: 3rem;
+    height: 8rem;
+    // min-width: calc(100% / 3);
+    // max-width: calc(100% / 3);
+    // font-size: 3rem;
     background-color: #B6C867;
-    padding: 3% 0 3%;
+    // padding: 3%;
     // align-content: center;
     text-align: center;
     vertical-align: middle;
