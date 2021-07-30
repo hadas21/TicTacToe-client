@@ -35,10 +35,25 @@
             </div>
         </div>
     </header>
+
+    <div id="log-out-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Wait a minute</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to leave?</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="log-out-modal-btn" type="button" class="btn btn-secondary" data-dismiss="modal">I'm sure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-6">
-
-
             <form id="sign-up-form">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -58,17 +73,17 @@
             </form>
         </div>
 
-        <div id="log-in-modal" class="modal" tabindex="-1" role="dialog">
+        <div id="sign-up-modal" class="modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
+                        <h5 class="modal-title">Ooops</h5>
                     </div>
                     <div class="modal-body">
-                        <p>Modal body text goes here.</p>
+                        <p>Make sure you enter the same password in both fields</p>
                     </div>
                     <div class="modal-footer">
-                        <button id="log-in-modal-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Got it</button>
+                        <button id="sign-up-modal-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Got it</button>
                     </div>
                 </div>
             </div>
@@ -90,20 +105,36 @@
             </form>
         </div>
     </div>
-
+    <div id="log-in-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ooops</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Check email and password</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="log-in-modal-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Got it</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="position-absolute top-50 start-50 translate-middle">
         <div id="center">
             <p>-X-O-X-O-X-O-X-O-X-O-</p>
-            <p id="welcome-user">Feal free to sign up! <br> If you did, come on and sign in</p>
+            <p id="welcome-user">Feel free to sign up! <br> If you did, come on and sign in</p>
 
         </div>
     </section>
     <div>
-        <p id="message-user"></p>
+        <div id="p-div">
+            <p id="message-user"></p>
+        </div>
     </div>
     <section id="board-game-wrapper">
-        <div id="board-game" class="container">
-            <div class="row ">
+        <div id="board-game" class="col-12 col-sm-6 container">
+            <div class="row  d-flex justify-content-center">
                 <div data-index="0" class="col-4 cell border"></div>
                 <div data-index="1" class="col-4 cell border"></div>
                 <div data-index="2" class="col-4 cell border"></div>

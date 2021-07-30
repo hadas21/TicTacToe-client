@@ -10,7 +10,8 @@ const onSignUpSuccess = (response) => {
 
 const onSignUpFailure = function() {
     $('#sign-up-form').trigger('reset').hide()
-    alert('something went wrong =( try again')
+    $('#sign-up-modal').show()
+
     $('#sign-up-btn').show()
 }
 
@@ -39,7 +40,7 @@ const onLogInFailure = function() {
 }
 
 const onLogOutSuccess = () => {
-    alert('Are you sure you want to leave?')
+    $('#log-out-modal').show()
     $('#log-out-btn').hide()
     $('#log-in-btn').show()
     $('#sign-up-btn').show()

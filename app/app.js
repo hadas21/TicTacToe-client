@@ -21,5 +21,7 @@ $(() => {
 
     $('.cell').on('click', eventsTic.onCell)
 
-    $('#log-in-modal-btn').on('click', onModalLogInBtn)
+    $('#sign-up-modal-btn').on('click', eventsTic.onSignUpModalBtn)
+    $('#log-in-modal-btn').on('click', eventsTic.onLogInModalBtn)
+    $('#log-out-modal-btn').on('click', eventsTic.onLogOutModalBtn)
 })

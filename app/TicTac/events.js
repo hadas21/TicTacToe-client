@@ -19,6 +19,9 @@ const onSignUp = function(event) {
         .then(ui.onSignUpSuccess)
         .catch(ui.onSignUpFailure)
 }
+const onSignUpModalBtn = () => {
+    $('#sign-up-modal').hide()
+}
 
 const onLogInBtn = function() {
     $('#log-in-form').show()
@@ -35,8 +38,7 @@ const onLogIn = function(event) {
         .then(ui.onLogInSuccess)
         .catch(ui.onLogInFailure)
 }
-const onModalLogInBtn = () => {
-    console.log('got it')
+const onLogInModalBtn = () => {
     $('#log-in-modal').hide()
 }
 
@@ -46,6 +48,9 @@ const onLogOut = function() {
         .then(ui.onLogOutSuccess)
         .catch(ui.failure)
 
+}
+const onLogOutModalBtn = () => {
+    $('#log-out-modal').hide()
 }
 
 const onNewGame = function() {
@@ -87,5 +92,7 @@ module.exports = {
     onLogOut,
     onNewGame,
     onCell,
-    onModalLogInBtn
+    onLogInModalBtn,
+    onSignUpModalBtn,
+    onLogOutModalBtn
 }
