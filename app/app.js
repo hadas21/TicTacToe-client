@@ -6,7 +6,6 @@ const eventsTic = require('./../app/TicTac/events')
 
 $(() => {
 
-
     $('#sign-up-form').hide()
     $('#sign-up-form').on('submit', eventsTic.onSignUp)
     $('#sign-up-btn').on('click', eventsTic.onSignUpBtn)

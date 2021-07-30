@@ -49,6 +49,8 @@ const onLogOutSuccess = () => {
     $('#center').show()
     $('#welcome-user').text('thank you for playing')
     $('#message-user').empty()
+    $('#confetti').css('background-image', '')
+
 }
 
 const onNewGameSuccess = (response) => {
@@ -86,6 +88,7 @@ const over = function(gameCells) {
         return false
     }
 }
+const imageUrl = 'https://i.gifer.com/origin/1a/1af8d3b487b77085d5288814f151e1de_w200.webp'
 const onCellSuccess = (response) => {
     //display x/o on board
 
@@ -99,6 +102,7 @@ const onCellSuccess = (response) => {
     store.isOver = over(response.game.cells)
     if (store.isOver === true) {
         $('#message-user').text(`${store.playerMove} is the winner!!`)
+        $('#confetti').css('background-image', 'url(' + imageUrl + ')')
     } else if (store.isOver === false && isTie) {
         $('#message-user').text("game over, it's a tie")
     }
