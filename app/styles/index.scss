@@ -11,14 +11,9 @@
 body {
     background-color: #FAF1E6;
     height: 100vh;
-    // display: flex;
     background-size: cover;
 }
 
-// #confetti {
-//     height: 100%;
-//     width: 100%;
-// }
 header {
     height: 20vh;
     margin: 0;
@@ -37,13 +32,10 @@ h1 {
     margin: auto;
 }
 
-// #forms {
-//     height: 70vh;
-//     display: flex;
-//     flex-flow: row nowrap;
-//     justify-content: space-between;
-//     align-items: center;
-// }
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+}
+
 .btn-outline {
     border-color: #01937C;
     color: #01937C;
@@ -56,58 +48,25 @@ h1 {
     color: #01937C;
 }
 
-// .left-center {
-//     margin-left: 50px;
-// }
-// .right-center {
-//     margin-right: 50px;
-// }
 #center {
     border: 1px solid #FFC074;
     padding: 10px;
-    //     padding: 40px;
-    //     flex-basis: auto;
-    //     position: absolute;
-    //     left: 50%;
-    //     top: 50%;
-    //     transform: translate(-50%, -50%);
 }
 
 #board-game {
-    // position: absolute;
-    // left: 50%;
-    // top: 65%;
-    // transform: translate(-50%, -65%);
-    //border: 1px solid #B6C867;
-    // padding: 20px;
-    // max-height: calc(100vh - 200px);
-    // max-width: calc(100vh - 200px);
-    //margin: auto 20%;
     background-color: #B6C867;
-    // height: inherit;
 }
 
 #board-game-wrapper {
     margin: 2rem;
 }
 
-// .row-hiehy {
-//     height: calc(100% / 3);
-// }
 .cell {
     height: 7rem;
-    //width: 7rem;
-    // min-width: calc(100% / 3);
-    // max-width: calc(100% / 3);
     font-size: 3rem;
-    // padding: 3%;
-    // align-content: center;
-    //text-align: center;
-    //vertical-align: middle;
 }
 
 #confetti {
-    //background-image: url('https://i.gifer.com/origin/1a/1af8d3b487b77085d5288814f151e1de_w200.webp');
     background-size: cover;
     height: 85vh;
 }
@@ -124,7 +83,6 @@ h1 {
 
 #p-div {
     height: 4rem;
-    // vertical-align: middle;
 }
 
 @media (max-width: 400px) {
@@ -135,5 +93,3 @@ h1 {
         height: 10vh;
     }
 }
-
-// 0587341116

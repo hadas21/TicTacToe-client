@@ -23,4 +23,5 @@ $(() => {
     $('#sign-up-modal-btn').on('click', eventsTic.onSignUpModalBtn)
     $('#log-in-modal-btn').on('click', eventsTic.onLogInModalBtn)
     $('#log-out-modal-btn').on('click', eventsTic.onLogOutModalBtn)
+    $('#failure-modal-btn').on('click', eventsTic.onFailureModalBtn)
 })

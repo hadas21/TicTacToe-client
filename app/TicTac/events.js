@@ -81,9 +81,9 @@ const onCell = function(event) {
             .catch(ui.failure)
     }
 }
-
-
-
+const onFailureModalBtn = () => {
+    $('#failure-modal').hide()
+}
 module.exports = {
     onSignUpBtn,
     onSignUp,
@@ -94,5 +94,6 @@ module.exports = {
     onCell,
     onLogInModalBtn,
     onSignUpModalBtn,
-    onLogOutModalBtn
+    onLogOutModalBtn,
+    onFailureModalBtn
 }

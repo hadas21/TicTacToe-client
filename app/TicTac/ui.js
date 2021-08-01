@@ -11,7 +11,7 @@ const onSignUpSuccess = (response) => {
 const onSignUpFailure = function() {
     $('#sign-up-form').trigger('reset').hide()
     $('#sign-up-modal').show()
-
+    $('#center').show()
     $('#sign-up-btn').show()
 }
 
@@ -37,6 +37,7 @@ const onLogInFailure = function() {
     $('#log-in-modal').show()
     $('#log-in-form').trigger('reset').hide()
     $('#log-in-btn').show()
+    $('#center').show()
 }
 
 const onLogOutSuccess = () => {
@@ -88,7 +89,8 @@ const over = function(gameCells) {
         return false
     }
 }
-const imageUrl = 'https://i.gifer.com/origin/1a/1af8d3b487b77085d5288814f151e1de_w200.webp'
+const imageUrl = 'https://i.gifer.com/6SSp.gif'
+    //const imageUrl = 'https://i.gifer.com/XZ5V.gif'
 const onCellSuccess = (response) => {
     //display x/o on board
 
@@ -109,7 +111,8 @@ const onCellSuccess = (response) => {
 }
 
 const failure = () => {
-    alert('Something went wrong... try again')
+    //alert('Something went wrong... try again')
+    $('#failure-modal').show()
 }
 
 module.exports = {
