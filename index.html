@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tic-Tac-Toe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <button id="sign-up-btn" class="btn btn-outline btn-sm">Sign Up</button>
+                    <button id="log-out-btn" class="btn btn-outline btn-sm">Log Out</button>
+
+                </div>
+
+                <div class="col-4">
+                    <h1 id="header-h1" class="col-9">TicTacToe</h1>
+                </div>
+
+                <div class="col-4">
+                    <button id="log-in-btn" class="btn btn-outline btn-sm">Log In</button>
+                    <button id="new-game-btn" class="btn btn-outline  btn-sm ">New Game</button>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="confetti">
+        <div id="log-out-modal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Wait a minute</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to leave?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="log-out-modal-btn" type="button" class="btn btn-secondary" data-dismiss="modal">I'm sure</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <form id="sign-up-form">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input name="credentials[email]" placeholder="an@example.email" type="email" class="form-control" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Don't enter a real email or password! this website is not secure</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input name="credentials[password]" type="password" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password Confirmation</label>
+                        <input name="credentials[password_confirmation]" type="password" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-outline">Sign Up</button>
+                </form>
+            </div>
+
+            <div id="sign-up-modal" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Ooops</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>Make sure you enter the same password in both fields</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="sign-up-modal-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Got it</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-6">
+                <form id="log-in-form">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input name="credentials[email]" placeholder="an@example.email" type="email" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input name="credentials[password]" type="password" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-outline">Log In</button>
+                </form>
+            </div>
+        </div>
+        <div id="log-in-modal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ooops</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>Check email and password</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="log-in-modal-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Got it</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="position-absolute top-50 start-50 translate-middle">
+            <div id="center">
+                <p>-X-O-X-O-X-O-X-O-X-O-</p>
+                <p id="welcome-user">Feel free to sign up! <br> If you did, come on and sign in</p>
+
+            </div>
+        </section>
+        <div>
+            <div id="p-div">
+                <p id="message-user"></p>
+            </div>
+        </div>
+        <section id="board-game-wrapper">
+            <div id="board-game" class="col-12 col-sm-6 container">
+
+                <table class="table align-middle">
+
+
+                    <tbody>
+                        <tr>
+                            <td data-index="0" class="col-4 cell border"></td>
+                            <td data-index="1" class="col-4 cell border"></td>
+                            <td data-index="2" class="col-4 cell border"></td>
+                        </tr>
+                        <tr>
+                            <td data-index="3" class="col-4 cell border"></td>
+                            <td data-index="4" class="col-4 cell border"></td>
+                            <td data-index="5" class="col-4 cell border"></td>
+                        </tr>
+                        <tr>
+                            <td data-index="6" class="col-4 cell border"></td>
+                            <td data-index="7" class="col-4 cell border"></td>
+                            <td data-index="8" class="col-4 cell border"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <div id="failure-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sorry</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Somethings wrong.. try refreshing the page</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="failure-modal-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Got it</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

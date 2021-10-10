@@ -1,0 +1,99 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Zen+Loop&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: 'Zen Loop', cursive;
+    color: #01937C;
+    text-align: center;
+    font-size: large;
+}
+
+body {
+    background-color: #FAF1E6;
+    height: 100vh;
+    background-size: cover;
+}
+
+header {
+    height: 20vh;
+    margin: 0;
+    background-color: #FFC074;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    margin: 5px;
+}
+
+h1 {
+    margin: auto;
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.btn-outline {
+    border-color: #01937C;
+    color: #01937C;
+    margin: 5px;
+}
+
+.btn-outline:hover {
+    background-color: #FFC074;
+    border-color: #FFC074;
+    color: #01937C;
+}
+
+#center {
+    border: 1px solid #FFC074;
+    padding: 10px;
+}
+
+table {
+    background-color: #B6C867;
+}
+
+tr {
+    border: none;
+}
+
+#board-game-wrapper {
+    margin: 2rem;
+}
+
+.cell {
+    height: 7rem;
+    font-size: 3rem;
+}
+
+#confetti {
+    background-size: cover;
+    height: 85vh;
+}
+
+#message-user {
+    margin-top: 2rem;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+#header-h1 {
+    align-self: center;
+}
+
+#p-div {
+    height: 4rem;
+}
+
+@media (max-width: 400px) {
+    body {
+        font-size: medium;
+    }
+    header {
+        height: 10vh;
+    }
+}
