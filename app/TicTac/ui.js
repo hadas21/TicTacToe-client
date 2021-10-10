@@ -1,10 +1,9 @@
 'use strict'
 
 const store = require('../store')
-const func = require('./func')
 
 const onSignUpSuccess = (response) => {
-  $('#welcome-user').text(`Hey, ${response.user.email}. thanks for signing up =)`)
+  $('#welcome-user').html(`Hey, ${response.user.email}.<br>Please Log in`)
   $('#sign-up-form').hide().trigger('reset')
   $('#center').show()
 }

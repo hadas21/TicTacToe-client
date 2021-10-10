@@ -15,7 +15,8 @@ const onSignUp = function (event) {
   const form = event.target
   const data = getFormFields(form)
 
-  api.signUp(data)
+  api
+    .signUp(data)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
 }
